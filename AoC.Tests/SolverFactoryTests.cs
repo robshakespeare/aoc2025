@@ -5,7 +5,7 @@ public class SolverFactoryTests
     [Test]
     public void DoesHaveAllDaysRegistered()
     {
-        foreach (var dayNumber in Enumerable.Range(1, 25))
+        foreach (var dayNumber in Enumerable.Range(1, 12))
         {
             var solver = SolverFactory.Instance.TryCreateSolver(dayNumber.ToString());
 
@@ -28,7 +28,7 @@ public class SolverFactoryTests
     {
         SolverFactory.Instance.Solvers.Select(x => x.DayNumber)
             .Should().BeEquivalentTo(
-                Enumerable.Range(0, 26).Select(i => i.ToString()),
+                Enumerable.Range(0, 12 + 1).Select(i => i.ToString()),
                 opts => opts.WithStrictOrdering());
     }
 
@@ -59,24 +59,25 @@ public class SolverFactoryTests
             yield return new TestCaseData(new DateTime(year, 11, 29)).Returns(1);
             yield return new TestCaseData(new DateTime(year, 11, 30)).Returns(1);
 
-            // For Dec, return the current day number, or 25 if the day is past the 25th
+            // For Dec, return the current day number, or 12 if the day is past the 12th
             yield return new TestCaseData(new DateTime(year, 12, 1)).Returns(1);
             yield return new TestCaseData(new DateTime(year, 12, 2)).Returns(2);
             yield return new TestCaseData(new DateTime(year, 12, 5)).Returns(5);
             yield return new TestCaseData(new DateTime(year, 12, 10)).Returns(10);
-            yield return new TestCaseData(new DateTime(year, 12, 24)).Returns(24);
-            yield return new TestCaseData(new DateTime(year, 12, 25)).Returns(25);
-            yield return new TestCaseData(new DateTime(year, 12, 31)).Returns(25);
+            yield return new TestCaseData(new DateTime(year, 12, 11)).Returns(11);
+            yield return new TestCaseData(new DateTime(year, 12, 12)).Returns(12);
+            yield return new TestCaseData(new DateTime(year, 12, 13)).Returns(12);
+            yield return new TestCaseData(new DateTime(year, 12, 31)).Returns(12);
 
-            // For Jan & Feb, always display the 25th
-            yield return new TestCaseData(new DateTime(year, 1, 1)).Returns(25);
-            yield return new TestCaseData(new DateTime(year, 1, 10)).Returns(25);
-            yield return new TestCaseData(new DateTime(year, 1, 31)).Returns(25);
-            yield return new TestCaseData(new DateTime(year, 2, 1)).Returns(25);
-            yield return new TestCaseData(new DateTime(year, 2, 5)).Returns(25);
-            yield return new TestCaseData(new DateTime(year, 2, 10)).Returns(25);
-            yield return new TestCaseData(new DateTime(year, 2, 27)).Returns(25);
-            yield return new TestCaseData(new DateTime(year, 2, 28)).Returns(25);
+            // For Jan & Feb, always display the 12th
+            yield return new TestCaseData(new DateTime(year, 1, 1)).Returns(12);
+            yield return new TestCaseData(new DateTime(year, 1, 10)).Returns(12);
+            yield return new TestCaseData(new DateTime(year, 1, 31)).Returns(12);
+            yield return new TestCaseData(new DateTime(year, 2, 1)).Returns(12);
+            yield return new TestCaseData(new DateTime(year, 2, 5)).Returns(12);
+            yield return new TestCaseData(new DateTime(year, 2, 10)).Returns(12);
+            yield return new TestCaseData(new DateTime(year, 2, 27)).Returns(12);
+            yield return new TestCaseData(new DateTime(year, 2, 28)).Returns(12);
 
             // For months after Feb, display the 1st
             yield return new TestCaseData(new DateTime(year, 3, 1)).Returns(1);
