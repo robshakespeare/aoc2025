@@ -1,0 +1,20 @@
+<Solution>
+  <Folder Name="/Apps/">
+    <Project Path="AoC.CLI/AoC.CLI.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".github/workflows/CI-apps-workflow.yml" />
+    <File Path=".github/workflows/CI-workflow.yml" />
+    <File Path=".gitignore" />
+    <File Path="build.cake" />
+    <File Path="global.json" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+    <File Path="Template/AoC.Tests/DayXXX/DayNNNSolverTests.cs" />
+    <File Path="Template/AoC/DayXXX/DayNNNSolver.cs" />
+  </Folder>
+  <Project Path="AoC.Tests/AoC.Tests.csproj" />
+  <Project Path="AoC/AoC.csproj" />
+</Solution>
