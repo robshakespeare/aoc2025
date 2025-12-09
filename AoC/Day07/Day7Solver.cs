@@ -2,7 +2,7 @@ namespace AoC.Day07;
 
 public class Day7Solver : ISolver
 {
-    public string DayName => "";
+    public string DayName => "Laboratories";
 
     public long? SolvePart1(string input)
     {
