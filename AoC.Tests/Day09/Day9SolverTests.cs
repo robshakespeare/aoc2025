@@ -7,7 +7,14 @@ public class Day9SolverTests
     private readonly Day9Solver _sut = new();
 
     private const string ExampleInput = """
-
+        7,1
+        11,1
+        11,7
+        9,7
+        9,5
+        2,5
+        2,3
+        7,3
         """;
 
     [Test]
@@ -17,7 +24,7 @@ public class Day9SolverTests
         var part1ExampleResult = _sut.SolvePart1(ExampleInput);
 
         // ASSERT
-        part1ExampleResult.Should().Be(null);
+        part1ExampleResult.Should().Be(50);
     }
 
     [Test]
@@ -27,7 +34,7 @@ public class Day9SolverTests
         var part1Result = _sut.SolvePart1();
 
         // ASSERT
-        part1Result.Should().Be(null);
+        part1Result.Should().Be(4745816424);
     }
 
     [Test]
