@@ -9,6 +9,7 @@ on:
     paths-ignore:
       - "AoC/**"
       - "AoC.Tests/**"
+  workflow_dispatch:
 
 jobs:
   build-and-test:
