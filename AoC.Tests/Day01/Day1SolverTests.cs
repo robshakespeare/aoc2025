@@ -7,7 +7,16 @@ public class Day1SolverTests
     private readonly Day1Solver _sut = new();
 
     private const string ExampleInput = """
-
+        L68
+        L30
+        R48
+        L5
+        R60
+        L55
+        L1
+        L99
+        R14
+        L82
         """;
 
     [Test]
@@ -17,7 +26,7 @@ public class Day1SolverTests
         var part1ExampleResult = _sut.SolvePart1(ExampleInput);
 
         // ASSERT
-        part1ExampleResult.Should().Be(null);
+        part1ExampleResult.Should().Be(3);
     }
 
     [Test]
@@ -27,7 +36,7 @@ public class Day1SolverTests
         var part1Result = _sut.SolvePart1();
 
         // ASSERT
-        part1Result.Should().Be(null);
+        part1Result.Should().Be(1055);
     }
 
     [Test]
