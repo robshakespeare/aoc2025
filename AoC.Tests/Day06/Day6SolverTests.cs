@@ -7,7 +7,10 @@ public class Day6SolverTests
     private readonly Day6Solver _sut = new();
 
     private const string ExampleInput = """
-
+        123 328  51 64
+         45 64  387 23
+          6 98  215 314
+        *   +   *   +
         """;
 
     [Test]
@@ -17,7 +20,7 @@ public class Day6SolverTests
         var part1ExampleResult = _sut.SolvePart1(ExampleInput);
 
         // ASSERT
-        part1ExampleResult.Should().Be(null);
+        part1ExampleResult.Should().Be(4277556);
     }
 
     [Test]
@@ -27,7 +30,7 @@ public class Day6SolverTests
         var part1Result = _sut.SolvePart1();
 
         // ASSERT
-        part1Result.Should().Be(null);
+        part1Result.Should().Be(4309240495780);
     }
 
     [Test]
@@ -37,7 +40,7 @@ public class Day6SolverTests
         var part2ExampleResult = _sut.SolvePart2(ExampleInput);
 
         // ASSERT
-        part2ExampleResult.Should().Be(null);
+        part2ExampleResult.Should().Be(3263827);
     }
 
     [Test]
@@ -47,6 +50,6 @@ public class Day6SolverTests
         var part2Result = _sut.SolvePart2();
 
         // ASSERT
-        part2Result.Should().Be(null);
+        part2Result.Should().Be(9170286552289);
     }
 }
