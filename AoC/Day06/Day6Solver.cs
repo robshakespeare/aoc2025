@@ -60,8 +60,6 @@ public class Day6Solver : ISolver
             mathProblems[x].Lines.Add(line[prevSep..]);
         }
 
-        mathProblems.Reverse().Select(p => p.Calculate()).DumpConsole();
-
         return mathProblems.Reverse().Select(p => p.Calculate()).Sum();
     }
 
